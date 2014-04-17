@@ -20,10 +20,10 @@ How do I fiddle with the metadata?
 ------------------------
 1. Open **js/main.js** in your favorite text editor
 2. To edit the **device modes**
-  * Find the constant array `DEVICE_MODES_METADATA`
+  * Open **metadata/device-mode-metadata.js**
   * Modify the mode metadata objects
   * Save and reload the page
 3. To edit the **device settings**
-  * Find the constant array `DEVICE_SETTINGS_METADATA`
+  * Open **metadata/device-setting-metadata.js**
   * Modify the settings metadata objects
   * Save and reload the page
