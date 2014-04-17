@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+    <script type="text/javascript" src="js/vendor/underscore-1.5.2.js"></script>
+    <script type="text/javascript" src="js/vendor/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="js/vendor/knockout.validation.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/util/mapped-collection.js"></script>
+    <script type="text/javascript" src="js/prescription/edit-prescription/device-setting.js"></script>
+    <script type="text/javascript" src="js/prescription/edit-prescription/device-mode.js"></script>
+    <script type="text/javascript" src="js/view-model/edit-prescription.js"></script>
+  </head>
+  <body>
+
+    <div class="row">
+
+      <!-- Device Mode -->
+      <div class="column">
+        <div class="column-name">Mode</div>
+        <div class="column-value">
+          <select data-bind="value: selectedModeEnum,
+                             options: deviceModes,
+                             optionsText: 'displayName',
+                             optionsValue: 'enumName'"></select>
+        </div>
+      </div>
+
+      <!-- Device Settings -->
+      <!-- ko foreach: activeSettings -->
+      <div class="column">
+        <div class="column-name">
+          <span data-bind="text: $data.displayName"></span>
+          <span data-bind="visible: $data.units,
+                           text: '(' + $data.units + ')'"></span>
+        </div>
+        <div class="column-value">
+          <select data-bind="value: currentValue,
+                             enable: enable,
+                             options: $data.values,
+                             optionsText: 'text',
+                             optionsValue: 'value'"></select>
+        </div>
+      </div>
+      <!-- /ko -->
+      
+    </div>
+
+    <hr />
+
+    <!-- Confirmation -->
+    <table><tbody data-bind="foreach: activeSettings">
+      <tr>
+        <td data-bind="text: displayName"></td>
+        <td data-bind="text: currentValue"></td>
+      </tr>
+    </tbody></table>
+    
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
+</html>

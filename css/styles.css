@@ -1,0 +1,20 @@
+select {
+  width: 100%;
+}
+
+.row {
+  /*background-color: #fcc;*/
+}
+
+.row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.row .column {
+  width: 9em;
+  margin-right: 0.5em;
+  /*background-color: #ccf;*/
+  display: inline-block;
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine.css">
+    <script type="text/javascript" src="jasmine/lib/jasmine.js"></script>
+    <script type="text/javascript" src="jasmine/lib/jasmine-html.js"></script>
+
+    <!-- Required files -->
+    <script type="text/javascript" src="../js/vendor/underscore-1.5.2.js"></script>
+    <script type="text/javascript" src="../js/vendor/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="../js/vendor/knockout.validation.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+
+    <!-- Source files -->
+    <script type="text/javascript" src="../js/util/mapped-collection.js"></script>
+    <script type="text/javascript" src="../js/prescription/edit-prescription/device-setting.js"></script>
+    <script type="text/javascript" src="../js/prescription/edit-prescription/device-mode.js"></script>
+
+    <!-- Spec files -->
+    <script type="text/javascript" src="spec/util/mapped-collection_spec.js"></script>
+    <script type="text/javascript" src="spec/prescription/edit-prescription/device-setting_spec.js"></script>
+    <script type="text/javascript" src="spec/prescription/edit-prescription/device-mode_spec.js"></script>
+
+    <script type="text/javascript">
+      (function() {
+        var jasmineEnv = jasmine.getEnv(),
+            htmlReporter = new jasmine.HtmlReporter(),
+            currentWindowOnload = window.onload;
+
+        jasmineEnv.updateInterval = 1000;
+        jasmineEnv.addReporter(htmlReporter);
+        jasmineEnv.specFilter = function(spec) {
+          return htmlReporter.specFilter(spec);
+        };
+
+        window.onload = function () {
+          if (currentWindowOnload) {
+            currentWindowOnload();
+          }
+          execJasmine();
+        };
+
+        function execJasmine() {
+          jasmineEnv.execute();
+        }
+      }());
+    </script>
+
+  </head>
+  <body>
+  </body>
+</html>
