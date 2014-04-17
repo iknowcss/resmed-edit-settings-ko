@@ -7,10 +7,12 @@
     _.extend(this, settingMetadata);
     this.parentCollection = parentCollection;
 
-    if (!_.isArray(this.values)) {
-      if (_.isObject(this.values)) {
-        this.values = this.generateValues(this.values.from, this.values.to, this.values.step);
-      }
+    if (!_.isArray(this.values) && _.isObject(this.values)) {
+      this.values = this.generateValues(this.values.from, this.values.to, this.values.step);
+    }
+
+    if (!this.hasOwnProperty('units')) {
+      this.units = '';
     }
 
     if (!this.hasOwnProperty('currentValue')) {

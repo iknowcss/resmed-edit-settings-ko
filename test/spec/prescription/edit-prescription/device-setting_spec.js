@@ -109,7 +109,7 @@ describe('DeviceSettingCollection', function () {
     expect(eprMode instanceof DeviceSetting).toBe(true);
     expect(eprMode.enumName).toBe('EPR_MODE');
     expect(eprMode.displayName).toBe('EPR Mode');
-    expect(eprMode.units).toBeUndefined();
+    expect(eprMode.units).toBe('');
     expect(eprMode.values instanceof Array).toBe(true);
     expect(eprMode.defaultValue).toBe('OFF');
   });

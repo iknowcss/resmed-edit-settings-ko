@@ -36,14 +36,14 @@
       <!-- ko foreach: activeSettings -->
       <div class="column">
         <div class="column-name">
-          <span data-bind="text: $data.displayName"></span>
-          <span data-bind="visible: $data.units,
-                           text: '(' + $data.units + ')'"></span>
+          <span data-bind="text: displayName"></span>
+          <span data-bind="visible: units,
+                           text: '(' + units + ')'"></span>
         </div>
         <div class="column-value">
           <select data-bind="value: currentValue,
                              enable: enable,
-                             options: $data.values,
+                             options: values,
                              optionsText: 'text',
                              optionsValue: 'value'"></select>
         </div>
