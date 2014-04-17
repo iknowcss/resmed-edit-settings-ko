@@ -18,12 +18,13 @@ How do I test it?
 
 How do I fiddle with the metadata?
 ------------------------
-1. Open **js/main.js** in your favorite text editor
-2. To edit the **device modes**
-  * Open **metadata/device-mode-metadata.js**
+
+### To edit device modes
+  * Open **metadata/device-mode-metadata.js** in your favorite text editor
   * Modify the mode metadata objects
   * Save and reload the page
-3. To edit the **device settings**
-  * Open **metadata/device-setting-metadata.js**
+
+### To edit device settings
+  * Open **metadata/device-setting-metadata.js** in your favorite text editor
   * Modify the settings metadata objects
   * Save and reload the page
